@@ -1,0 +1,12 @@
+# Normalise everything to LF in the repo AND in the working copy.
+#
+# This is not cosmetic. The shell scripts here get uploaded to Linux boxes, and a
+# CRLF `#!/usr/bin/env bash\r` fails with a syntax error pointing at a line far from
+# anything you edited — see content-factory/memory/lesson_windows_experiment_harness.md,
+# which exists because that trap cost a real experiment run.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.zip binary
