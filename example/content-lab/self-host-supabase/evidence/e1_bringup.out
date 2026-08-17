@@ -1,0 +1,200 @@
+=== E1 bring-up + measure ===
+host: cf-self-host-supabase | kernel: 6.8.0-124-generic
+date_start_utc: 2026-08-11T12:35:13Z
+boot_time_utc: 2026-08-11 12:34:14
+               total        used        free      shared  buff/cache   available
+Mem:            3915         450        3267           4         421        3465
+Swap:              0           0           0
+2
+Docker version 29.6.2, build dfc4efb
+Docker Compose version v5.3.1
+--- clone (sparse, docker dir only) ---
+Cloning into '/root/supabase'...
+Your branch is up to date with 'origin/master'.
+clone_seconds: 2
+repo_commit: 241bb11 2026-08-11T11:55:43+02:00
+--- image tags in compose ---
+image: darthsim/imgproxy:v3.30.1
+image: envoyproxy/envoy:v1.39.0
+image: postgrest/postgrest:v14.12
+image: supabase/edge-runtime:v1.74.0
+image: supabase/gotrue:v2.189.0
+image: supabase/postgres-meta:v0.96.6
+image: supabase/postgres:17.6.1.136
+image: supabase/realtime:v2.102.3
+image: supabase/storage-api:v1.60.4
+image: supabase/studio:2026.08.03-sha-022b374
+image: supabase/supavisor:2.9.5
+--- pull (timed) ---
+ Image supabase/supavisor:2.9.5 Pulling 
+ Image supabase/postgres:17.6.1.136 Pulling 
+ Image supabase/postgres-meta:v0.96.6 Pulling 
+ Image supabase/storage-api:v1.60.4 Pulling 
+ Image supabase/studio:2026.08.03-sha-022b374 Pulling 
+ Image postgrest/postgrest:v14.12 Pulling 
+ Image supabase/realtime:v2.102.3 Pulling 
+ Image envoyproxy/envoy:v1.39.0 Pulling 
+ Image supabase/edge-runtime:v1.74.0 Pulling 
+ Image darthsim/imgproxy:v3.30.1 Pulling 
+ Image supabase/gotrue:v2.189.0 Pulling 
+ Image postgrest/postgrest:v14.12 Pulled 
+ Image supabase/gotrue:v2.189.0 Pulled 
+ Image darthsim/imgproxy:v3.30.1 Pulled 
+ Image envoyproxy/envoy:v1.39.0 Pulled 
+ Image supabase/postgres-meta:v0.96.6 Pulled 
+ Image supabase/realtime:v2.102.3 Pulled 
+ Image supabase/edge-runtime:v1.74.0 Pulled 
+ Image supabase/studio:2026.08.03-sha-022b374 Pulled 
+ Image supabase/storage-api:v1.60.4 Pulled 
+ Image supabase/supavisor:2.9.5 Pulled 
+ Image supabase/postgres:17.6.1.136 Pulled 
+pull_seconds: 114
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          11        0         8.908GB   8.781GB (98%)
+Containers      0         0         0B        0B
+Local Volumes   0         0         0B        0B
+Build Cache     0         0         0B        0B
+--- up -d (timed to login screen) ---
+ Network supabase_default Creating 
+ Network supabase_default Created 
+ Volume supabase_deno-cache Creating 
+ Volume supabase_deno-cache Created 
+ Volume supabase_db-config Creating 
+ Volume supabase_db-config Created 
+ Container supabase-db Creating 
+ Container supabase-imgproxy Creating 
+ Container supabase-studio Creating 
+ Container supabase-db Created 
+ Container supabase-pooler Creating 
+ Container supabase-rest Creating 
+ Container supabase-meta Creating 
+ Container realtime-dev.supabase-realtime Creating 
+ Container supabase-auth Creating 
+ Container supabase-studio Created 
+ Container supabase-envoy Creating 
+ Container supabase-imgproxy Created 
+ Container supabase-rest Created 
+ Container supabase-storage Creating 
+ Container supabase-envoy Created 
+ Container supabase-edge-functions Creating 
+ Container supabase-auth Created 
+ Container supabase-meta Created 
+ Container supabase-pooler Created 
+ Container realtime-dev.supabase-realtime Created 
+ Container supabase-storage Created 
+ Container supabase-edge-functions Created 
+ Container supabase-studio Starting 
+ Container supabase-imgproxy Starting 
+ Container supabase-db Starting 
+ Container supabase-studio Started 
+ Container supabase-studio Waiting 
+ Container supabase-imgproxy Started 
+ Container supabase-db Started 
+ Container supabase-db Waiting 
+ Container supabase-db Waiting 
+ Container supabase-db Waiting 
+ Container supabase-db Waiting 
+ Container supabase-db Waiting 
+ Container supabase-studio Healthy 
+ Container supabase-envoy Starting 
+ Container supabase-envoy Started 
+ Container supabase-envoy Waiting 
+ Container supabase-db Healthy 
+ Container supabase-pooler Starting 
+ Container supabase-db Healthy 
+ Container realtime-dev.supabase-realtime Starting 
+ Container supabase-db Healthy 
+ Container supabase-auth Starting 
+ Container supabase-db Healthy 
+ Container supabase-meta Starting 
+ Container supabase-db Healthy 
+ Container supabase-rest Starting 
+ Container supabase-pooler Started 
+ Container realtime-dev.supabase-realtime Started 
+ Container supabase-meta Started 
+ Container supabase-auth Started 
+ Container supabase-rest Started 
+ Container supabase-db Waiting 
+ Container supabase-db Healthy 
+ Container supabase-storage Starting 
+ Container supabase-storage Started 
+ Container supabase-envoy Healthy 
+ Container supabase-edge-functions Starting 
+ Container supabase-edge-functions Started 
+compose_up_rc: 0
+kong_basic_auth_alive_seconds: 20
+studio_serving_seconds: 20 (http 307)
+studio_html_first_bytes:
+/project/default
+--- container states right after up ---
+NAME                             IMAGE                                    STATUS
+realtime-dev.supabase-realtime   supabase/realtime:v2.102.3               Up 8 seconds (health: starting)
+supabase-auth                    supabase/gotrue:v2.189.0                 Up 8 seconds (healthy)
+supabase-db                      supabase/postgres:17.6.1.136             Up 19 seconds (healthy)
+supabase-edge-functions          supabase/edge-runtime:v1.74.0            Up 1 second (health: starting)
+supabase-envoy                   envoyproxy/envoy:v1.39.0                 Up 11 seconds (healthy)
+supabase-imgproxy                darthsim/imgproxy:v3.30.1                Up 19 seconds (healthy)
+supabase-meta                    supabase/postgres-meta:v0.96.6           Up 8 seconds (health: starting)
+supabase-pooler                  supabase/supavisor:2.9.5                 Up 8 seconds (health: starting)
+supabase-rest                    postgrest/postgrest:v14.12               Up 8 seconds (healthy)
+supabase-storage                 supabase/storage-api:v1.60.4             Up 6 seconds (health: starting)
+supabase-studio                  supabase/studio:2026.08.03-sha-022b374   Up 19 seconds (healthy)
+--- settle 10 minutes ---
+date_settled_utc: 2026-08-11T12:47:31Z
+--- health after settle ---
+NAME                             STATUS
+realtime-dev.supabase-realtime   Up 10 minutes (healthy)
+supabase-auth                    Up 10 minutes (healthy)
+supabase-db                      Up 10 minutes (healthy)
+supabase-edge-functions          Up 10 minutes (healthy)
+supabase-envoy                   Up 10 minutes (healthy)
+supabase-imgproxy                Up 10 minutes (healthy)
+supabase-meta                    Up 10 minutes (healthy)
+supabase-pooler                  Up 10 minutes (healthy)
+supabase-rest                    Up 10 minutes (healthy)
+supabase-storage                 Up 10 minutes (healthy)
+supabase-studio                  Up 10 minutes (healthy)
+--- docker stats (settled, no-stream) ---
+NAME                             MEM USAGE / LIMIT     CPU %
+supabase-edge-functions          100.3MiB / 3.824GiB   0.02%
+supabase-storage                 220MiB / 3.824GiB     0.00%
+realtime-dev.supabase-realtime   205.6MiB / 3.824GiB   1.81%
+supabase-meta                    124MiB / 3.824GiB     27.69%
+supabase-pooler                  187MiB / 3.824GiB     6.56%
+supabase-auth                    35.34MiB / 3.824GiB   4.25%
+supabase-envoy                   84.4MiB / 3.824GiB    0.97%
+supabase-rest                    31.77MiB / 3.824GiB   0.17%
+supabase-db                      120.8MiB / 3.824GiB   5.94%
+supabase-studio                  255.1MiB / 3.824GiB   0.00%
+supabase-imgproxy                99.77MiB / 3.824GiB   2.52%
+--- free -m (settled) ---
+               total        used        free      shared  buff/cache   available
+Mem:            3915        1545         251         102        2513        2370
+Swap:              0           0           0
+--- top RSS processes ---
+  RSS COMMAND
+236788 next-server (v1
+225064 beam.smp
+197248 MainThread
+171140 beam.smp
+114188 dockerd
+113116 node
+89132 edge-runtime
+72556 imgproxy
+66796 envoy
+66228 containerd
+62576 .postgres-wrapp
+31692 auth
+29484 postgrest
+27292 multipathd
+--- disk ---
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        77G   11G   66G  14% /
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          11        11        8.908GB   0B (0%)
+Containers      11        11        128.9MB   0B (0%)
+Local Volumes   2         2         544.1kB   0B (0%)
+Build Cache     0         0         0B        0B
+--- container count ---
+11
+date_end_utc: 2026-08-11T12:47:36Z

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="chrome.css">
+<title>clone-kit terminal example</title>
+</head>
+<body class="ck-stage">
+  <div class="ck-terminal">
+    <div class="ck-terminal-bar">
+      <div class="ck-dots"><i></i><i></i><i></i></div>
+      <span class="ck-terminal-title">root@cf-demo: ~</span>
+    </div>
+    <div class="ck-terminal-body"><span class="p">root@cf-demo:~#</span> <span class="c">docker compose up -d</span>
+<span class="o">[+] Running 3/3
+ ✔ Network plausible_default      Created
+ ✔ Container plausible-db-1       Started
+ ✔ Container plausible-app-1      Started</span>
+<span class="p">root@cf-demo:~#</span> <span class="c">docker ps --format '{{.Names}}: {{.Status}}'</span>
+<span class="ok">plausible-app-1: Up 12 seconds
+plausible-db-1: Up 13 seconds</span></div>
+  </div>
+</body>
+</html>

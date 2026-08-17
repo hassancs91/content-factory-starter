@@ -1,0 +1,22 @@
+# Secrets — never commit
+.env
+
+# Runtime state, not ledger
+content-lab/.locks/
+content-lab/.ssh_known_hosts.d/
+content-lab/.ssh_known_hosts
+
+# Live session cookies for real accounts. Treat as passwords.
+content-lab/.auth/
+
+# Bulky and reproducible. Everything else under content-lab/ IS committed on purpose:
+# the scripts, the evidence, the claims map and the recon report are the ledger.
+content-lab/*/evidence/raw/
+content-lab/*/assets/raw/
+content-lab/*/recon/serp/pages/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

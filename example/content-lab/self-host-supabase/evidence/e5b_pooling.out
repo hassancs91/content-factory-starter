@@ -1,0 +1,31 @@
+=== E5b bounded pooling === 2026-08-11T22:20:56Z
+--- prepared statements, session mode 5432 (one connection, works) ---
+        1
+(1 row)
+
+--- prepared statements, transaction mode 6543, SAME connection ---
+        1
+(1 row)
+
+--- transaction mode, PREPARE then EXECUTE on SEPARATE connections (the ORM shape) ---
+PREPARE
+(1 row)
+
+--- connection math ---
+100
+POOLER_DEFAULT_POOL_SIZE=20
+POOLER_MAX_CLIENT_CONN=100
+POOLER_DB_POOL_SIZE=5
+--- 25 parallel bounded clients through 6543 (pool size 20) ---
+parallel_rc=0
+parallel_ok_count: 0
+parallel_errors: 0
+--- backend connections during idle (the multiplexing proof) ---
+31
+date_end_utc: 2026-08-11T22:20:59Z
+
+=== E5b addendum (corrected + extended) ===
+pool_par.out lines: 25, all "|N" success rows -> parallel_ok_count: 25/25 (grep pattern in script was wrong, pg_sleep prints empty)
+cross-connection EXECUTE after PREPARE on separate 6543 connections: 5/5 succeeded (1..5)
+-> Supavisor transaction mode DOES serve named prepared statements across connections (classic pgbouncer lore does not apply)
+supavisor fix chain evidence: tenant re-seed (delete _supavisor.users+tenants, restart supavisor) after E2 rotation; see e2/e5 PIECE log + session transcript: SCRAM ArgumentError traceback captured 2026-08-11 22:17 UTC
