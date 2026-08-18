@@ -8,7 +8,7 @@ breaks the actual software, takes its own screenshots, writes in your voice, tie
 factual claim to an evidence file, and stops at two fixed points for you to approve.
 
 This is the generic version of the system behind
-**[learnwithhasan.com/guide/ai-content-factory/](https://learnwithhasan.com/guide/ai-content-factory/)** —
+**[learnwithhasan.com/guide/ai-content-factory/](https://learnwithhasan.com/guide/ai-content-factory/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=body)** —
 same contract, same tools, same hard-won lessons, with the site-specific parts stripped out
 so you can point it at your own niche.
 
@@ -123,9 +123,9 @@ and worth doing — not to replace it.
 
 ## Credits
 
-Built by [Hasan Aboul Hasan](https://learnwithhasan.com). If you want the story of how the
+Built by [Hasan Aboul Hasan](https://learnwithhasan.com/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=body). If you want the story of how the
 system was designed and what it costs to run, that is
-[the guide](https://learnwithhasan.com/guide/ai-content-factory/).
+[the guide](https://learnwithhasan.com/guide/ai-content-factory/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=body).
 
 MIT licensed — see [LICENSE](LICENSE). Use it, change it, ship it. No attribution required,
 though a link back is always welcome.
@@ -138,12 +138,12 @@ though a link back is always welcome.
 
 This repo is one thing I built with AI. The book is the system underneath it.
 
-**[Vibe Engineering Blocks](https://learnwithhasan.com/blocks/)** is my free 74-page book.
+**[Vibe Engineering Blocks](https://learnwithhasan.com/blocks/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=footer)** is my free 74-page book.
 47 building blocks for shipping real apps with AI. One block per page, each with the exact
 prompt to hand your AI.
 
-Built by **[Hasan Aboul Hasan](https://learnwithhasan.com)**. I build real products with AI and
+Built by **[Hasan Aboul Hasan](https://learnwithhasan.com/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=footer)**. I build real products with AI and
 write down exactly how.
-[Guides](https://learnwithhasan.com/guides/) &nbsp;·&nbsp;
+[Guides](https://learnwithhasan.com/guides/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=footer) &nbsp;·&nbsp;
 [YouTube](https://www.youtube.com/@HasanAboulHasan) &nbsp;·&nbsp;
-[Community](https://learnwithhasan.com/community/)
+[Community](https://learnwithhasan.com/community/?utm_source=github&utm_medium=readme&utm_campaign=content-factory-starter&utm_content=footer)
