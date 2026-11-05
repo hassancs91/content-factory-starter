@@ -1,7 +1,7 @@
 ---
 name: content-factory
 description: End-to-end content pipeline — idea in, published evidence-backed page out. Orchestrates search recon, real lab experiments (cloud VMs / local Docker), screenshot and asset production, drafting in a defined voice, verification loops, ship, and a write-back to your knowledge base. Triggers on "/content-factory ...", "new piece ...", "factory status", "resume <slug>", "refresh <slug>", "continue the <slug> piece", or any request to create a page that needs experiments, captures, or SERP recon.
-version: 1.0.2
+version: 1.0.3
 ---
 
 # Content Factory — Orchestrator

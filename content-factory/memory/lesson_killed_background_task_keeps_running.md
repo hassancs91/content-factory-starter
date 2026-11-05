@@ -5,7 +5,7 @@ description: When the harness kills a background Bash task, only the wrapper die
 
 # A killed background task leaves its script running
 
-**What happened (self-host-uptime-kuma, 2026-10-21, Windows + Git Bash):** the boot probe
+**What happened (Windows + Git Bash):** the boot probe
 ran as a background Bash task while a 602 MB image pulled. The task reached the harness's
 background time limit and came back `killed`. Only its wrapper died. The bash script kept
 running, finished its steps, and its `trap cleanup EXIT` fired about three minutes later,

@@ -101,8 +101,8 @@ new project hit exactly that and parked its four lessons in the piece's `PIECE.m
 log instead; move lessons like those into `memory/` yourself.
 
 This is the step everyone skips, and it is the one that makes run five better than run one.
-The twenty-one lessons shipped in this kit are exactly that: seventeen accumulated across
-25 pieces, and four from that test install of the kit on Windows.
+The twenty lessons shipped in this kit are exactly that: seventeen accumulated across
+25 pieces, and three from that test install of the kit on Windows.
 **A factory that never writes lessons back is just a long prompt.**
 
 ## Troubleshooting

@@ -5,9 +5,9 @@ description: Git Bash rewrites an argument that starts with / before a native pr
 
 # Git Bash rewrites `/paths` before docker or claude sees them
 
-**What happened (self-host-uptime-kuma, 2026-10-21, Windows + Git Bash):** the run's opening
+**What happened (Windows + Git Bash):** the run's opening
 slash command, sent from Git Bash with `claude -p`, reached Claude Code as
-`C:/Program Files/Git/<command> new how to self-host Uptime Kuma`. Git Bash saw an argument
+`C:/Program Files/Git/<command> new how to <topic>`. Git Bash saw an argument
 starting with `/`, took it for a path, and rewrote it against Git's install folder before
 the program ever ran. The clean re-test needed `MSYS_NO_PATHCONV=1`. The probe script in the
 same run exported that variable up front, so its docker container paths would not be

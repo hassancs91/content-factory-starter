@@ -38,7 +38,7 @@ content-factory/          ← the skill. Copy this whole folder into .claude/ski
 ├── modules/              lab · recon · assets · verify · knowledge base
 ├── profiles/             how a verified draft becomes a page on YOUR site
 ├── templates/            PIECE.md · claims map · evidence manifest · recon report
-├── memory/               21 lessons from real runs — the part that compounds
+├── memory/               20 lessons from real runs — the part that compounds
 └── lab/                  the tools (Python, mostly stdlib)
 example/                  a real piece, start to finish, lightly scrubbed
 docs/                     QUICKSTART.md · ADAPT.md
@@ -119,7 +119,7 @@ and worth doing — not to replace it.
 1. [`example/`](example/) — a real run, including the eight-hour failure that became the
    published guide's headline advice
 2. [`content-factory/SKILL.md`](content-factory/SKILL.md) — the contract itself
-3. [`content-factory/memory/`](content-factory/memory/) — 21 lessons, each written the day
+3. [`content-factory/memory/`](content-factory/memory/) — 20 lessons, each written the day
    something cost a re-run
 
 ## Honest expectations

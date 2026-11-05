@@ -5,13 +5,13 @@ description: Windows Python cannot open a Git Bash path like /d/repos/...; hand 
 
 # Python can't open `/d/...` paths from Git Bash
 
-**What happened (self-host-uptime-kuma, 2026-10-21, Windows + Git Bash):** the boot probe
-built its summary path from `$(pwd)`, which in Git Bash is `/d/repos/my-website/...`, and
+**What happened (Windows + Git Bash):** the boot probe
+built its summary path from `$(pwd)`, which in Git Bash is `/d/projects/your-site/...`, and
 passed it to `python` to write a JSON file. Two runs ended the same way, after every
 measurement had already been taken:
 
 ```
-FileNotFoundError: [Errno 2] No such file or directory: '/d/repos/my-website/content-lab/self-host-uptime-kuma/evidence/probe-00-boot.json'
+FileNotFoundError: [Errno 2] No such file or directory: '/d/projects/your-site/content-lab/<slug>/evidence/probe-00-boot.json'
 ```
 
 Windows Python is a native program and does not know MSYS paths. Git Bash normally rewrites
