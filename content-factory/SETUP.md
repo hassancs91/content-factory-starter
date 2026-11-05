@@ -5,12 +5,23 @@ only the first two.
 
 ## 1. The workspace (required)
 
-From the root of the project where your content lives:
+From the root of the project where your content lives, in Git Bash (Windows) or any bash:
 
 ```bash
 mkdir -p content-lab
-printf 'content-lab/.locks/\ncontent-lab/.ssh_known_hosts.d/\ncontent-lab/.auth/\ncontent-lab/*/evidence/raw/\ncontent-lab/*/assets/raw/\ncontent-lab/*/recon/serp/pages/\n' >> .gitignore
+printf '\n.env\ncontent-lab/.locks/\ncontent-lab/.ssh_known_hosts.d/\ncontent-lab/.auth/\ncontent-lab/*/evidence/raw/\ncontent-lab/*/assets/raw/\ncontent-lab/*/recon/serp/pages/\n' >> .gitignore
 ```
+
+Or the same two lines in PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force content-lab | Out-Null
+Add-Content .gitignore "", ".env", "content-lab/.locks/", "content-lab/.ssh_known_hosts.d/", "content-lab/.auth/", "content-lab/*/evidence/raw/", "content-lab/*/assets/raw/", "content-lab/*/recon/serp/pages/"
+```
+
+`.env` is on the list because your keys live there (section 4). The blank first line is on
+purpose: if your `.gitignore` does not end with a newline, `.env` would otherwise join its
+last line and stay unignored.
 
 Everything else in `content-lab/` **is** committed on purpose: the scripts, the evidence
 files, the claims map, and the recon report are the ledger. They are what makes a `refresh`
@@ -67,12 +78,21 @@ stress-tests, or a sandbox account of the tool you teach, needs none of these â€
 
 ## 5. Python dependencies (only for the tools you use)
 
+For `lab/capture.py` and `lab/auth.py`:
+
 ```bash
-pip install playwright && playwright install chromium   # lab/capture.py, lab/auth.py
-pip install requests                                    # lab/do.py, lab/dns.py
+pip install playwright
+playwright install chromium
 ```
 
-`lock.py`, `ledger.py`, and `lint_draft.py` are pure standard library. Python 3.9+.
+For `lab/do.py` and `lab/dns.py`:
+
+```bash
+pip install requests
+```
+
+These lines work the same in bash and in PowerShell. `lock.py`, `ledger.py`, and
+`lint_draft.py` are pure standard library. Python 3.9+.
 
 ## 6. Check it works
 
@@ -88,5 +108,5 @@ The first prints your session identity and an empty lock list. The second writes
 
 Read `memory/MEMORY.md`. Then, after your first run, write down what hurt â€” in `memory/`,
 not in your head. The lessons shipped in this kit are exactly that, accumulated over
-25 pieces. **They are the compounding part of the system.** A factory that never writes
-lessons back is just a long prompt.
+25 pieces and a test install of this kit on Windows. **They are the compounding part of
+the system.** A factory that never writes lessons back is just a long prompt.

@@ -22,6 +22,7 @@ Format: `- [Title](file.md) — one-line hook`
 - [Never edit a driver script while an instance is running](lesson_never_edit_running_driver.md) — bash reads scripts by byte offset mid-run, so an edit kills every live instance with phantom syntax errors minutes later.
 - [pkill -f matches the remote wrapper shell](lesson_pkill_matches_the_remote_wrapper.md) — anchored patterns only (`^python3 /root/probe`); an empty exit-255 from ssh means you killed your own session; liveness checks must assert log growth.
 - [Assert on what the user would see](lesson_assert_on_what_the_user_sees.md) — a websocket opening, a 200, "the container is running" all pass on a broken feature; assert on the rendered string, and print the options before selecting one.
+- ["Up" is any HTTP answer, not a 200](lesson_up_is_any_http_answer.md) — a fresh Uptime Kuma 2 answers 302 into setup, so a poll that waited for 200 reported 158 s for a 5 s boot; count 2xx/3xx/4xx as up, record the code, and assert on content separately.
 
 ## Planning and cost
 
@@ -44,3 +45,6 @@ Format: `- [Title](file.md) — one-line hook`
 ## Environment
 
 - [Five Windows harness traps](lesson_windows_experiment_harness.md) — an em dash in a UTF-8-no-BOM `.ps1` breaks the parser 70 lines away; `2>&1` on a native exe is a terminating error; harness-reaped shells kill background servers; git-bash `sed -i` turns uploaded scripts CRLF.
+- [A killed background task leaves its script running](lesson_killed_background_task_keeps_running.md) — the harness kills the wrapper, not the script, and its EXIT trap wrote NULs into the next run's log; find the orphan by command line (PowerShell, not Git Bash `ps`), stop it by PID, one log path per run.
+- [Git Bash rewrites `/paths` for native programs](lesson_msys_path_conversion.md) — `claude -p "/content-factory ..."` arrives as `C:/Program Files/Git/content-factory ...`, and so do container paths and bind mounts; set `MSYS_NO_PATHCONV=1`, which also stops host-path conversion.
+- [Python can't open `/d/...` paths from Git Bash](lesson_python_cannot_open_git_bash_paths.md) — hand native programs the `pwd -W` path; with `MSYS_NO_PATHCONV=1` set, nothing converts it for you.

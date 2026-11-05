@@ -24,6 +24,21 @@ Use whatever you actually have, in rough order of preference:
    small or new niche this beats every keyword tool, because the volumes there round to
    zero while the demand is real.
 
+**One worked example of plugging in your own** (an example, not a requirement): Keywords
+Everywhere has an official MCP server. One command in a terminal adds it to Claude Code at
+user scope, so the key is stored in your user config (`~/.claude.json`), never in the
+project. Put your own API key in place of `YOUR_KEY`:
+
+```bash
+claude mcp add --scope user --transport http keywords-everywhere https://mcp.keywordseverywhere.com/mcp -H "Authorization: Bearer YOUR_KEY"
+```
+
+Then add one line under this heading, so recon knows to use it: "Search connector for this
+kit: recon gets search volumes and related keywords from the `keywords-everywhere` MCP
+server, and the results pages from web search." Its data calls spend credits from your
+account (one real piece spent 250 at recon); checking the balance is free. Any other keyword
+tool with an MCP server plugs in the same way, with its own command and name.
+
 **Whatever you use, the numbers go into the report as data on disk, not as recalled
 figures.** Save the raw payloads into `recon/`. A volume you cannot point at a file for is
 a volume you made up.

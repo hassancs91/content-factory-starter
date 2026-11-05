@@ -1,7 +1,7 @@
 ---
-name: Content Factory
-description: End-to-end content pipeline — idea in, published evidence-backed page out. Orchestrates search recon, real lab experiments (cloud VMs / local Docker), screenshot and asset production, drafting in a defined voice, verification loops, ship, and a write-back to your knowledge base. Triggers on "/factory ...", "new piece ...", "factory status", "resume <slug>", "refresh <slug>", "continue the <slug> piece", or any request to create a page that needs experiments, captures, or SERP recon.
-version: 1.0.1
+name: content-factory
+description: End-to-end content pipeline — idea in, published evidence-backed page out. Orchestrates search recon, real lab experiments (cloud VMs / local Docker), screenshot and asset production, drafting in a defined voice, verification loops, ship, and a write-back to your knowledge base. Triggers on "/content-factory ...", "new piece ...", "factory status", "resume <slug>", "refresh <slug>", "continue the <slug> piece", or any request to create a page that needs experiments, captures, or SERP recon.
+version: 1.0.2
 ---
 
 # Content Factory — Orchestrator
@@ -51,7 +51,7 @@ system that compounds. Do not skip it.**
 
 ### Task: new-piece
 
-**Trigger:** "/factory new <topic>", "new piece: <topic>", or the owner describes an idea
+**Trigger:** "/content-factory new <topic>", "new piece: <topic>", or the owner describes an idea
 for a page that needs the pipeline.
 
 0. `lock.py status`, then `lock.py claim <slug>` once the slug is agreed (step 1). Note
@@ -87,7 +87,7 @@ the draft before moving on.
 
 ### Task: resume
 
-**Trigger:** "resume <slug>", "continue the <slug> piece", "/factory resume <slug>".
+**Trigger:** "resume <slug>", "continue the <slug> piece", "/content-factory resume <slug>".
 
 0. `lock.py claim <slug>` FIRST. If it exits 1 the piece is live in another session: stop,
    say so, do not read-modify-write its files. Note the port it prints. (If it says
@@ -106,7 +106,7 @@ the draft before moving on.
 
 ### Task: status
 
-**Trigger:** "factory status", "/factory status".
+**Trigger:** "factory status", "/content-factory status".
 
 1. `lab/lock.py status` FIRST — it regenerates the LEDGER as a side effect, so everything
    you read afterwards is current. Each lock reads MINE / LIVE / DEAD / STALE.
@@ -121,7 +121,7 @@ its PIECE.md may overstate what actually finished), anything under the LEDGER's 
 
 ### Task: refresh
 
-**Trigger:** "refresh <slug>", "/factory refresh <slug>". Manual, monthly-ish.
+**Trigger:** "refresh <slug>", "/content-factory refresh <slug>". Manual, monthly-ish.
 
 1. Re-run the piece's `scripts/` against current infra (fresh VM if the manifest used one).
 2. Diff new results against committed evidence; re-render clones.

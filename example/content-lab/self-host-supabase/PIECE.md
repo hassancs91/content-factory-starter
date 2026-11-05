@@ -50,7 +50,7 @@ next_action: "S9 (later, with Hasan): distill ledger → brain candidate entries
 
 ### S0 Intake
 - [x] `lock.py claim self-host-supabase` taken; port **8156**
-- [x] Slug confirmed with Hasan (pre-specified in the /factory command)
+- [x] Slug confirmed with Hasan (pre-specified in the opening request)
 - [x] Workspace dirs created (recon/ scripts/ evidence/ evidence/raw/ assets/ assets/raw/ drafts/)
 
 ### S1 Brain pull

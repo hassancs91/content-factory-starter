@@ -38,7 +38,7 @@ content-factory/          ← the skill. Copy this whole folder into .claude/ski
 ├── modules/              lab · recon · assets · verify · knowledge base
 ├── profiles/             how a verified draft becomes a page on YOUR site
 ├── templates/            PIECE.md · claims map · evidence manifest · recon report
-├── memory/               17 lessons from real runs — the part that compounds
+├── memory/               21 lessons from real runs — the part that compounds
 └── lab/                  the tools (Python, mostly stdlib)
 example/                  a real piece, start to finish, lightly scrubbed
 docs/                     QUICKSTART.md · ADAPT.md
@@ -63,10 +63,23 @@ stack is different, and a hardcoded vendor would be the first thing you had to r
 
 ## Install
 
+In Git Bash (Windows) or any bash:
+
 ```bash
 git clone https://github.com/hassancs91/content-factory-starter.git
+mkdir -p /path/to/your-project/.claude/skills
 cp -r content-factory-starter/content-factory /path/to/your-project/.claude/skills/
 cd /path/to/your-project && mkdir -p content-lab
+```
+
+Or in PowerShell:
+
+```powershell
+git clone https://github.com/hassancs91/content-factory-starter.git
+New-Item -ItemType Directory -Force C:\path\to\your-project\.claude\skills | Out-Null
+Copy-Item -Recurse content-factory-starter\content-factory C:\path\to\your-project\.claude\skills\
+Set-Location C:\path\to\your-project
+New-Item -ItemType Directory -Force content-lab | Out-Null
 ```
 
 Then open `.claude/skills/content-factory/SETUP.md` and do the two required steps (the
@@ -106,7 +119,7 @@ and worth doing — not to replace it.
 1. [`example/`](example/) — a real run, including the eight-hour failure that became the
    published guide's headline advice
 2. [`content-factory/SKILL.md`](content-factory/SKILL.md) — the contract itself
-3. [`content-factory/memory/`](content-factory/memory/) — 17 lessons, each written the day
+3. [`content-factory/memory/`](content-factory/memory/) — 21 lessons, each written the day
    something cost a re-run
 
 ## Honest expectations

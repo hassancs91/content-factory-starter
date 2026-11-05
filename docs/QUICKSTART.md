@@ -9,17 +9,33 @@ to trust the machinery.
 
 ## 1. Install (5 minutes)
 
+In Git Bash (Windows) or any bash:
+
 ```bash
 git clone https://github.com/hassancs91/content-factory-starter.git
+mkdir -p /path/to/your-project/.claude/skills
 cp -r content-factory-starter/content-factory /path/to/your-project/.claude/skills/
 cd /path/to/your-project
 mkdir -p content-lab
-printf 'content-lab/.locks/\ncontent-lab/.auth/\ncontent-lab/*/evidence/raw/\ncontent-lab/*/assets/raw/\n' >> .gitignore
+printf '\n.env\ncontent-lab/.locks/\ncontent-lab/.ssh_known_hosts.d/\ncontent-lab/.auth/\ncontent-lab/*/evidence/raw/\ncontent-lab/*/assets/raw/\ncontent-lab/*/recon/serp/pages/\n' >> .gitignore
 python .claude/skills/content-factory/lab/lock.py status
 ```
 
-That last command should print your session id and "no locks held". If it does, the spine
-works.
+Or in PowerShell:
+
+```powershell
+git clone https://github.com/hassancs91/content-factory-starter.git
+New-Item -ItemType Directory -Force C:\path\to\your-project\.claude\skills | Out-Null
+Copy-Item -Recurse content-factory-starter\content-factory C:\path\to\your-project\.claude\skills\
+Set-Location C:\path\to\your-project
+New-Item -ItemType Directory -Force content-lab | Out-Null
+Add-Content .gitignore "", ".env", "content-lab/.locks/", "content-lab/.ssh_known_hosts.d/", "content-lab/.auth/", "content-lab/*/evidence/raw/", "content-lab/*/assets/raw/", "content-lab/*/recon/serp/pages/"
+python .claude\skills\content-factory\lab\lock.py status
+```
+
+The `.gitignore` line is the same one as in `SETUP.md` step 1, and it covers `.env`, where
+your keys go. That last command should print your session id and "no locks held". If it
+does, the spine works.
 
 ## 2. Fill in the writer profile (30 minutes, and worth every one)
 
@@ -51,7 +67,7 @@ factory disappoints its owner on run one.
 In Claude Code, from your project:
 
 ```
-/factory new how to <the thing you know>
+/content-factory new how to <the thing you know>
 ```
 
 Then get out of the way until it stops. Here is what to expect:
@@ -77,8 +93,16 @@ has, the topic is not ready, and saying so is a valid outcome.
 
 One file, what happened, why, how to apply it next time. Add a line to `memory/MEMORY.md`.
 
+The kit's `memory/` sits under `.claude/`, and Claude Code asks before it writes anything
+there. So every lesson write-back is an approval: in an interactive session (the VS Code
+panel or the terminal), say yes when it asks. In print mode (`claude -p`) the write is
+refused outright, even with `--permission-mode acceptEdits`. A test run of this kit in a
+new project hit exactly that and parked its four lessons in the piece's `PIECE.md` Decision
+log instead; move lessons like those into `memory/` yourself.
+
 This is the step everyone skips, and it is the one that makes run five better than run one.
-The seventeen lessons shipped in this kit are exactly that, accumulated across 25 pieces.
+The twenty-one lessons shipped in this kit are exactly that: seventeen accumulated across
+25 pieces, and four from that test install of the kit on Windows.
 **A factory that never writes lessons back is just a long prompt.**
 
 ## Troubleshooting
